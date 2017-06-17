@@ -5,7 +5,7 @@ before_install:
 script:
   - mkdir build
   - pdflatex -interaction=nonstopmode -halt-on-error -output-directory build index.tex && build index.tex
-    bibtext build/index || true) &&
+    (bibtext build/index || true) &&
     pdflatex -interaction=nonstopmode -halt-on-error -output-directory build index.tex && build index.tex &&
     pdflatex -interaction=nonstopmode -halt-on-error -output-directory build index.tex && build index.tex
 after_success:
